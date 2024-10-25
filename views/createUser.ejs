@@ -2,21 +2,31 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-<body>
-  <h1><%= title %></h1>
-  <form action="/create" method="POST">
-    <label for="firstName">First Name: </label>
-    <input type="text" name="firstName" id="firstName" required>
-    <label for="lastName">Last Name: </label>
-    <input type="text" name="lastName" id="lastName" required>
-    <label for="email">Email:</label>
-    <input type="email" name="email">
-    <label for="age"></label>
-    <input type="number" name="age">
-    <textarea name="bio"></textarea>
-    <button type="submit">Submit</button>
-  </form>
-  <a href="/">Back to home</a>
-</body>
+  <body>
+    <header><h1><%= title %></h1></header>
+    <%- include('errors') %>
+    <form action="/create" method="POST" class="userForm">
+      <div>
+        <label for="firstName">First Name: </label>
+        <input type="text" name="firstName" id="firstName" required />
+      </div>
+      <div>
+        <label for="lastName">Last Name: </label>
+        <input type="text" name="lastName" id="lastName" required />
+      </div>
+      <div>
+        <label for="email">Email:</label> <input type="email" name="email" />
+      </div>
+      <div>
+        <label for="age">Age:</label> <input type="number" name="age" />
+      </div>
+      <div><label for="bio">Bio:</label> <textarea name="bio"></textarea></div>
+      <button class="submit" type="submit">Submit</button>
+    </form>
+    <div class="homeLink">
+      <a href="/"><button>Back to home</button></a>
+    </div>
+  </body>
 </html>
