@@ -88,6 +88,7 @@ const usersDeletePost = (req, res) => {
 const usersSearchGet = (req, res) => {
     
     console.log(req.query.search)
+    console.log("jalla jiep")
     res.render("index", {
         title: "Search list",
         search: usersStorage.getSearch(req.query.search),
