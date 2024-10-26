@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <title><%= title %></title>
     <link rel="stylesheet" href="/style.css" />
+    <script src="/index.js" defer></script>
   </head>
   <body>
     <header><h1><%= title %></h1></header>
@@ -11,19 +11,39 @@
     <form action="/<%= user.id %>/update" method="POST" class="userForm">
       <div>
         <label for="firstName">First Name: </label>
-        <input type="text" name="firstName" id="firstName" value="<%= user.firstName %>" required />
+        <input
+          type="text"
+          name="firstName"
+          id="firstName"
+          value="<%= user.firstName %>"
+          required
+        />
       </div>
       <div>
         <label for="lastName">Last Name: </label>
-        <input type="text" name="lastName" id="lastName" value="<%= user.lastName %>" required />
+        <input
+          type="text"
+          name="lastName"
+          id="lastName"
+          value="<%= user.lastName %>"
+          required
+        />
       </div>
       <div>
-        <label for="email">Email:</label> <input type="email" name="email" value="<%= user.email %>"/>
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="<%= user.email %>" />
       </div>
       <div>
-        <label for="age">Age:</label> <input type="number" name="age" value="<%= user.age %>" />
+        <label for="age">Age:</label>
+        <input type="number" name="age" value="<%= user.age %>" />
       </div>
-      <div><label for="bio">Bio:</label> <textarea name="bio"><%= user.bio %>"</textarea></div>
+      <div>
+        <label for="bio">Bio:</label>
+        <textarea name="bio" class="bio"><%= user.bio %></textarea>
+        <div class="charCountContainer">
+          <p><span id="charCount"></span>/200</p>
+        </div>
+      </div>
       <button class="submit" type="submit">Submit</button>
     </form>
     <div class="homeLink">

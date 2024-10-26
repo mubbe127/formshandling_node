@@ -3,10 +3,11 @@
   <head>
     <title><%= title %></title>
     <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
   </head>
   <body>
     <header><h1><%= title %></h1></header>
-    <%- include('errors') %>
+
     <form action="/create" method="POST" class="userForm">
       <div>
         <label for="firstName">First Name: </label>
@@ -22,7 +23,14 @@
       <div>
         <label for="age">Age:</label> <input type="number" name="age" />
       </div>
-      <div><label for="bio">Bio:</label> <textarea name="bio"></textarea></div>
+      <div>
+        <label for="bio">Bio:</label>
+        <textarea name="bio" class="bio"></textarea>
+        <div class="charCountContainer">
+          <p><span id="charCount">0</span>/200</p>
+        </div>
+      </div>
+      <%- include('errors') %>
       <button class="submit" type="submit">Submit</button>
     </form>
     <div class="homeLink">
